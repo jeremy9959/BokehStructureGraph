@@ -8,6 +8,6 @@ setup(
     author_email="jeremy.teitelbaum@uconn.edu",
     description="Create the structure graph of a bokeh model",
     url="https://github.com/jeremy9959/BokehStructureGraph",
-    packages=find_packages(),
+    packages=['BokehStructureGraph']
     python_requires='>=3.6',
 )
