@@ -1,4 +1,4 @@
-from BokehStructureGraph.BokehStructureGraph import BokehStructureGraph as BSG
+import BokehStructureGraph as bsg
 from bokeh.plotting import figure
 import networkx as nx
 import json
@@ -17,13 +17,13 @@ def test_bsg_stage_one():
     f = figure()
     f.line(x=[1, 2, 3], y=[1, 2, 3])
     Kref_graph = nx.node_link_graph(json.loads(Kref))
-    K = BSG(f)
+    K = bsg.BokehStructureGraph(f)
     assert nx.is_isomorphic(K.graph, Kref_graph)
 
 def test_bsg_stage_two():
     f = figure()
     f.line(x=[1, 2, 3], y=[1, 2, 3])
     KKref_graph = nx.node_link_graph(json.loads(KKref))
-    K = BSG(f)
-    KK = BSG(K.model)
+    K = bsg.BokehStructureGraph(f)
+    KK = bsg.BokehStructureGraph(K.model)
     assert nx.is_isomorphic(KK.graph, KKref_graph)

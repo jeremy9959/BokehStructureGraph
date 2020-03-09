@@ -46,6 +46,7 @@ from bokeh.models import (
 # General API
 # -----------------------------------------------------------------------------
 
+__all__ = ['BokehStructureGraph']
 
 class BokehStructureGraph:
     """ Class for exploring the graph of submodels of a Bokeh model.
